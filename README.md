@@ -49,7 +49,7 @@ You must have the following tools installed:
 
 ### 1. Clone the Repository
 
-```bash
+```
 git clone [YOUR_REPOSITORY_URL_HERE]
 cd [YOUR_REPO_NAME]
 ```
@@ -58,12 +58,12 @@ cd [YOUR_REPO_NAME]
 The .proto file is the contract. Before building the containers, you must compile this contract into your chosen language's source files (in this case, Python).
 First, install the gRPC tools:
 
-```bash
+```
 pip install grpcio grpcio-tools
 ```
 Then, run the compiler command from the root of your project:
 
-```Bash
+```
 
 python -m grpc_tools.protoc \
     -I./protos \
@@ -77,7 +77,7 @@ python -m grpc_tools.protoc \
 ### 3. Build and Run with Docker Compose
 With the Protobuf files generated, run the entire stack with a single command:
 
-```Bash
+```
 docker-compose up --build
 ```
 
@@ -85,12 +85,13 @@ You will see the log output from both services: the server accepting the connect
 
 To stop and remove the containers and the network:
 
-```Bash
+```
 
 docker-compose down
 
 ```
 
+```
 ### 📁 Project Structure
 .
 ├── server/
@@ -109,6 +110,7 @@ docker-compose down
 ├── .gitignore
 ├── docker-compose.yml       
 └── README.md                
+```
 🤝 Contribution
 Contributions are welcome! Please feel free to open issues or submit pull requests.
 
