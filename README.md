@@ -91,8 +91,8 @@ docker-compose down
 
 ```
 
-```
 ### 📁 Project Structure
+```
 .
 ├── server/
 │   ├── greeter_server.py
