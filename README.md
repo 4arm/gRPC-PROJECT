@@ -59,22 +59,22 @@ You must have the following tools installed:
 
 ### 1. Clone the Repository
 
-```bash
+```
 git clone [YOUR_REPOSITORY_URL_HERE]
 cd [YOUR_REPO_NAME]
+```
 2. Generate Protobuf Files (CRITICAL STEP)
 The .proto file is the contract. Before building the containers, you must compile this contract into the necessary Python source files (helloworld_pb2.py and helloworld_pb2_grpc.py).
 
 First, install the gRPC tools:
 
-Bash
-
+```
 pip install grpcio grpcio-tools
+```
 Then, run the compiler command from the root of your project:
 
 🐧 macOS / Linux / Git Bash
-Bash
-
+```
 python -m grpc_tools.protoc \
     -I./protos \
     --python_out=./server \
@@ -82,28 +82,28 @@ python -m grpc_tools.protoc \
     --python_out=./client \
     --grpc_python_out=./client \
     ./protos/helloworld.proto
+```
 🖥️ Windows (CMD or PowerShell)
 Due to differences in terminal syntax, it's safest to run this as a single-line command:
-
-DOS
-
+```
 python -m grpc_tools.protoc -I./protos --python_out=./server --grpc_python_out=./server --python_out=./client --grpc_python_out=./client ./protos/helloworld.proto
+```
 Note: This command generates the required Python files into both the server/ and client/ directories, which is necessary for the Docker builds.
 
 3. Build and Run with Docker Compose
 With the Protobuf files generated, run the entire stack with a single command:
 
-Bash
-
+```
 docker-compose up --build
+```
 You will see the log output from both services, including detailed timestamps demonstrating the communication flow and latency.
 
 To stop and remove the containers and the network:
-
-Bash
-
+```
 docker-compose down
+```
 📁 Project Structure
+```
 .
 ├── server/
 │   ├── greeter_server.py
@@ -125,6 +125,7 @@ docker-compose down
 ├── .gitignore
 ├── docker-compose.yml       
 └── README.md
+```
 🤝 Contribution
 Contributions are welcome! Please feel free to open issues or submit pull requests.
 
