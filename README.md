@@ -60,8 +60,8 @@ You must have the following tools installed:
 ### 1. Clone the Repository
 
 ```
-git clone [YOUR_REPOSITORY_URL_HERE]
-cd [YOUR_REPO_NAME]
+git clone https://github.com/4arm/gRPC-PROJECT.git
+cd gRPC-PROJECT
 ```
 2. Generate Protobuf Files (CRITICAL STEP)
 The .proto file is the contract. Before building the containers, you must compile this contract into the necessary Python source files (helloworld_pb2.py and helloworld_pb2_grpc.py).
