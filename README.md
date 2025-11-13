@@ -52,17 +52,18 @@ You must have the following tools installed:
 ```bash
 git clone [YOUR_REPOSITORY_URL_HERE]
 cd [YOUR_REPO_NAME]
-2. Generate Protobuf Files (CRITICAL STEP)
-The .proto file is the contract. Before building the containers, you must compile this contract into your chosen language's source files (in this case, Python).
+```
 
+### 2. Generate Protobuf Files (CRITICAL STEP)
+The .proto file is the contract. Before building the containers, you must compile this contract into your chosen language's source files (in this case, Python).
 First, install the gRPC tools:
 
-Bash
-
+```bash
 pip install grpcio grpcio-tools
+```
 Then, run the compiler command from the root of your project:
 
-Bash
+```Bash
 
 python -m grpc_tools.protoc \
     -I./protos \
@@ -72,20 +73,25 @@ python -m grpc_tools.protoc \
 
 # This generates 'helloworld_pb2.py' and 'helloworld_pb2_grpc.py' inside the 'server/' directory,
 # which are required by the Dockerfile.
-3. Build and Run with Docker Compose
+```
+### 3. Build and Run with Docker Compose
 With the Protobuf files generated, run the entire stack with a single command:
 
-Bash
-
+```Bash
 docker-compose up --build
+```
+
 You will see the log output from both services: the server accepting the connection and the client printing the resulting greeting.
 
 To stop and remove the containers and the network:
 
-Bash
+```Bash
 
 docker-compose down
-📁 Project Structure
+
+```
+
+### 📁 Project Structure
 .
 ├── server/
 │   ├── greeter_server.py
