@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # 1. The gRPC Server Service
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: grpc-server
+    # Map the container port to the host machine port (optional)
+    ports:
+      - "50051:50051"
+    networks:
+      - grpc-net
+
+  # 2. The gRPC Client Service
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    container_name: grpc-client
+    # Ensure the server is running before the client tries to connect
+    depends_on:
+      - server
+    # Pass the server hostname/port to the client script
+    environment:
+      - GRPC_SERVER_HOST=server
+      - GRPC_SERVER_PORT=50051
+    networks:
+      - grpc-net
+    # The command will run the client script once it's built
+    command: python greeter_client.py
+
+networks:
+  grpc-net:
+    driver: bridge
