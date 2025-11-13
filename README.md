@@ -1,5 +1,3 @@
-<img width="1024" height="1024" alt="Gemini_Generated_Image_z6rwh9z6rwh9z6rw" src="https://github.com/user-attachments/assets/e675ec71-d21d-4768-a5fd-41ca8d6a6c60" /># 🚀 gRPC Service with Docker and Docker Compose
-
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
 ![gRPC](https://img.shields.io/badge/gRPC-00ADD8?logo=grpc&logoColor=white)
@@ -34,15 +32,7 @@ This project uses **Docker Compose** to create two independent services (`server
 3.  The server processes the request and streams back the `HelloReply`.
 
 ---
-### **[ 📸 INSERT YOUR DIAGRAMS HERE ]**
-
 ### <img width="1024" height="1024" alt="Gemini_Generated_Image_z6rwh9z6rwh9z6rw" src="https://github.com/user-attachments/assets/24e42d5a-c64a-4b51-98c7-c0f7681b9ce8" />
-
-
-To visually explain the architecture, place your diagrams in an `img/` folder and link them here.
-
-Example:
-`![Project Architecture Diagram](img/architecture.png)`
 ---
 
 ## 🚀 Getting Started
